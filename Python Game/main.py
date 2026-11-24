@@ -3,6 +3,8 @@ import random
 import sys
 import os
 
+HERE = os.path.dirname(os.path.abspath(__file__))
+
 
 # Initialising Pygame
 pygame.init()
@@ -23,7 +25,7 @@ GRAY = (100, 100, 100)
 card_width, card_height = 100, 150
 
 # Loading Nottingham-themed image for card back
-nottingham_back_image = pygame.image.load('/Users/prakharprakarshgmail.com/Desktop/Python Game/IMG_1211.JPG')  
+nottingham_back_image = pygame.image.load(os.path.join(HERE, 'IMG_1211.JPG'))  
 nottingham_back_image = pygame.transform.scale(nottingham_back_image, (card_width, card_height))  
 
 # Defining suits and ranks
@@ -80,8 +82,8 @@ def load_card_images(card_folder_path):
 
     try:
         # Defining paths for the images
-        back_card_image_path = os.path.join(card_folder_path, "/Users/prakharprakarshgmail.com/Desktop/Python Game/nottingham1.jpg")
-        special_card_image_path = os.path.join(card_folder_path, "/Users/prakharprakarshgmail.com/Desktop/Python Game/nottingham2.jpg")
+        back_card_image_path = os.path.join(HERE, "nottingham1.jpg")
+        special_card_image_path = os.path.join(HERE, "nottingham2.jpg")
 
         # Loading and scaling the back of card image
         card_images["back"] = pygame.image.load(back_card_image_path).convert_alpha()
@@ -98,7 +100,7 @@ def load_card_images(card_folder_path):
             for value in values:
                 
                 
-                card_path = "/Users/prakharprakarshgmail.com/Desktop/Python Game/nottingham2.jpg"
+                card_path = os.path.join(HERE, "nottingham2.jpg")
                 
 
                 
